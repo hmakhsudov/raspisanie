@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2 class="mb-4">Список Групп</h2>
+    <form method="GET" action="{% url 'groups' %}" class="mb-3">
+        <div class="input-group">
+            <input type="text" name="group_number" class="form-control" placeholder="Поиск по номеру группы" value="{{ search_query }}">
+            <div class="input-group-append">
+                <button type="submit" class="btn btn-primary">Поиск</button>
+            </div>
+        </div>
+    </form>
+    <ul class="list-group">
+        {% for group in group_list %}
+        <li class="list-group-item">
+            <a href="{% url 'group_schedule' group_number=group %}">{{ group }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

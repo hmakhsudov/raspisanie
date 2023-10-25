@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<ul class="list-unstyled schedule-table container">
+    <li class="list-group-item schedule-item">
+        <h2 class="mb-4">Понедельник</h2>
+        {% for pair in monday %}
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <p class="m-0">{{ pair.get_lesson_time }}</p>
+            <p class="m-0">Н405</p>
+        </div>
+        <div class="mb-3">
+            <p class="">{{ pair.location }}</p>
+            <p class="mb-0 font-weight-bold">{{ pair.sbj }}</p>
+            <p class="text-muted">{{ pair.teacher }}</p>
+        </div>
+        {% endfor %}
+    </li>
+    <li class="list-group-item schedule-item">
+        <h2 class="mb-4">Вторник</h2>
+        {% for pair in tuesday %}
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <p class="m-0">{{ pair.get_lesson_time }}</p>
+            <p class="m-0">Н405</p>
+        </div>
+        <div class="mb-3">
+            <p class="">{{ pair.location }}</p>
+            <p class="mb-0 font-weight-bold">{{ pair.sbj }}</p>
+            <p class="text-muted">{{ pair.teacher }}</p>
+        </div>
+        {% endfor %}
+    </li>
+    <li class="list-group-item schedule-item">
+        <h2 class="mb-4">Среда</h2>
+        {% for pair in wednesday %}
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <p class="m-0">{{ pair.get_lesson_time }}</p>
+            <p class="m-0">Н405</p>
+        </div>
+        <div class="mb-3">
+            <p class="">{{ pair.location }}</p>
+            <p class="mb-0 font-weight-bold">{{ pair.sbj }}</p>
+            <p class="text-muted">{{ pair.teacher }}</p>
+        </div>
+        {% endfor %}
+    </li>
+    <li class="list-group-item schedule-item">
+        <h2 class="mb-4">Четверг</h2>
+        {% for pair in thursday %}
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <p class="m-0">{{ pair.get_lesson_time }}</p>
+            <p class="m-0">Н405</p>
+        </div>
+        <div class="mb-3">
+            <p class="">{{ pair.location }}</p>
+            <p class="mb-0 font-weight-bold">{{ pair.sbj }}</p>
+            <p class="m-0">{{ pair.teacher }}</p>
+            <p class="text-muted">Количество мест: {{ pair.seat_number }}</p>
+        </div>
+        {% endfor %}
+    </li>
+    <li class="list-group-item schedule-item">
+        <h2 class="mb-4">Пятница</h2>
+        {% for pair in friday %}
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <p class="m-0">{{ pair.get_lesson_time }}</p>
+            <p class="m-0">Н405</p>
+        </div>
+        <div class="mb-3">
+            <p class="">{{ pair.location }}</p>
+            <p class="mb-0 font-weight-bold">{{ pair.sbj }}</p>
+            <p class="text-muted">{{ pair.teacher }}</p>
+        </div>
+        {% endfor %}
+    </li>
+    <li class="list-group-item schedule-item">
+        <h2 class="mb-4">Суббота</h2>
+        {% for pair in saturday %}
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <p class="m-0">{{ pair.get_lesson_time }}</p>
+            <p class="m-0">Н405</p>
+        </div>
+        <div class="mb-3">
+            <p class="font-weight-bold">{{ pair.location }}</p>
+            <p class="mb-0">{{ pair.sbj }}</p>
+            <p class="text-muted">{{ pair.teacher }}</p>
+        </div>
+        {% endfor %}
+    </li>
+
+    <!-- Repeat the same structure for other days -->
+</ul>
+
+{% endblock %}
